@@ -7,7 +7,7 @@ from models.comment import Comment
 
 class TestComment:
     def setup(self):
-        self.uuid = uuid.UUID
+        self.uuid = uuid.uuid4()
         self.comment = Comment(self.uuid, 'comment_text')
 
     def test_edit_comment(self):

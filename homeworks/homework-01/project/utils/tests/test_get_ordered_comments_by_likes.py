@@ -6,9 +6,9 @@ from utils.get_ordered_comments_by_likes import get_ordered_comments_by_likes
 
 def test_get_ordered_comments_by_likes():
     comments = [
-        Comment(uuid.UUID(), 't1'),
-        Comment(uuid.UUID(), 't2'),
-        Comment(uuid.UUID(), 't3'),
+        Comment(uuid.uuid4(), 't1'),
+        Comment(uuid.uuid4(), 't2'),
+        Comment(uuid.uuid4(), 't3'),
     ]
     comments[0].like()
     comments[1].dislike()

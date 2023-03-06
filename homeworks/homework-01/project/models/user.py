@@ -3,7 +3,7 @@ import uuid
 
 class User:
     def __init__(self, name):
-        self.id = uuid.UUID()
+        self.id = uuid.uuid4()
         self.name = name
         self.comments_count = 0
         self.rate = 0
