@@ -7,7 +7,7 @@ class TestUser:
     def setup(self):
         self.user = User('user_name')
 
-    def test_edit_name(self, new_name):
+    def test_edit_name(self):
         self.user.edit_name('other_name')
         assert self.user.name == 'other_name'
 

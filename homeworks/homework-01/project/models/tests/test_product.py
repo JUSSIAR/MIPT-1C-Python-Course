@@ -7,7 +7,7 @@ class TestProduct:
 
     def test_edit_category(self):
         self.product.edit_category('soft')
-        assert self.product.price == 'soft'
+        assert self.product.category == 'soft'
 
     def test_edit_price(self):
         self.product.edit_price(11)

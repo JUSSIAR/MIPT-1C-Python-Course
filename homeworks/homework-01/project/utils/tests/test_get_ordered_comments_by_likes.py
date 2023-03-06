@@ -17,6 +17,6 @@ def test_get_ordered_comments_by_likes():
 
     received = get_ordered_comments_by_likes(comments)
 
-    assert received[0].likes_count == 2
-    assert received[1].likes_count == 1
-    assert received[2].likes_count == -1
+    assert received[0].like_count == 2
+    assert received[1].like_count == 1
+    assert received[2].like_count == -1
