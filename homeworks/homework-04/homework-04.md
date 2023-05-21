@@ -107,7 +107,6 @@
     ```makefile
     PIP := venv/bin/pip
     PYTHON3 := venv/bin/python3
-    TESTS_STARTER := pytest -v .
     
     clear:
         rm -rf venv
@@ -120,9 +119,7 @@
     
     run:
         ${PYTHON3} server.py
-    
-    test:
-        ${TESTS_PATH}
+
     ```
   
 
@@ -181,8 +178,71 @@
         ...
         ```
     
-- **на 8 баллов**: покрыть контроллер тестами
-- **на 9 баллов**: добавить тайпинги где только можно
+- **на 8 баллов**: 
+
+    покрыть контроллер тестами
+
+    + добавляем пакет `pytest` в `requirements.txt`
+    + добавлем в корне файл `test_controllers.py`:
+
+        ```python
+        import pytest
+        from .controllers import operation
+      
+      
+        @pytest.mark.parametrize('a, b, expected', [(1, 2, 3), (5, -4, 1), (7, 8, 15)]
+        def test_operation(a, b, expected):
+            received = operation(a, b)
+            assert received == expected
+        ```
+    + в файле `Makefile` добавляем сценарий для тестов:
+  
+        ```makefile
+        ...
+      
+        TESTS := pytest -v ./test_controllers.py
+      
+        ...
+      
+        test:
+            ${TESTS}
+        ```
+- **на 9 баллов**:
+
+    добавить тайпинги где захочется
+    
+    + можно типизировать функцию извлечения порта из конфига
+  
+        ```python
+        ...
+      
+        def get_port() -> int:
+            config = dotenv_values(".env")
+            if "PORT" in config:
+                return config["PORT"]
+            return 5000
+        ...
+        ```
+        
+    + можно типизировать контроллер
+
+        ```python
+        def operation(a: int, b: int) -> int:
+            if (a == None) or (b == None):
+                return None
+            return a + b
+        ```
+
+    + можно типизировать тесты
+
+        ```python
+        @pytest.mark.parametrize('a, b, expected', [(1, 2, 3), (5, -4, 1), (7, 8, 15)]
+        def test_operation(a: int, b: int, expected: int) -> None:
+            received = operation(a, b)
+            assert received == expected
+        ```
+
+    + можно все что еще захочется
 
 - **А если все это заработает, то будет 10!**
 
