@@ -40,3 +40,7 @@
 О_итог_с_экзаменом = 0,5 * О_дз + 0,5 * О_экзамен
 
 Итог = max(О_итог_без_экзамена, О_итог_с_экзаменом)
+
+### Ведомость курса
+
+[Link](https://docs.google.com/spreadsheets/d/1GRokRst_qsqo_T3yCvvPzUR2i_2UccR0d1E26QCYUnE/edit?usp=sharing)
