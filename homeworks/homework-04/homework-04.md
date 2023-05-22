@@ -200,7 +200,7 @@
         ```makefile
         ...
       
-        TESTS := pytest -v ./test_controllers.py
+        TESTS := venv/bin/pytest -v ./test_controllers.py
       
         ...
       
