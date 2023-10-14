@@ -1,2 +1,2 @@
 def extract_prices(products):
-    pass
+    return map(lambda x: x.get_price(), products)
