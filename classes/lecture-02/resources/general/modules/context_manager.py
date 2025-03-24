@@ -5,10 +5,10 @@ from bs4 import BeautifulSoup
 
 
 def example():
-    with api.get('https://journal.tinkoff.ru/p50-review/') as tj:
+    with api.get('https://t-j.ru/p50-review/') as tj:
         tj.encoding = 'utf-8'
         content = BeautifulSoup(tj.text, 'lxml')
-        print(content.find('h1', {'class': 'article-header__title'}).text)
+        print(content.find('h1', {'class': '_articleTitle_1rqip_128'}).text)
 
 
 @contextlib.contextmanager

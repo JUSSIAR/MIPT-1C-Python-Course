@@ -105,7 +105,7 @@ O_final = 0.7 * O_homework + 0.3 * O_exam
 
 ### Ведомость курса
 
-[Табличка](https://docs.google.com/spreadsheets/d/1OUW195KKqRxEIR_hcJJiKo0Xxt28so5oNFWlQ8uTGgg/edit?usp=sharing)
+[Пока ведомости нет]()
 
 
 ### Информация по экстерну и перезачету
